@@ -8,8 +8,13 @@ Gem::Specification.new do |spec|
   spec.version       = MetaWeblog::VERSION
   spec.authors       = ["Tatsuya Sato"]
   spec.email         = ["satoryu.1981@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = <<-DESC
+    Ruby client for metaWeblog API.
+    This gem makes it easier for developers to talk with your Blog supporting
+    metaWeblog API. 
+    This gem only depends on REXML provided as one of Ruby's standard lib. 
+  DESC
+  spec.summary       = %q{Ruby client for metaWeblog API.}
   spec.homepage      = "http://github.com/satoryu/metaweblog"
   spec.license       = "MIT"
   spec.required_ruby_version = '>= 1.9.3'
