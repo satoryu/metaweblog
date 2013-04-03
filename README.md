@@ -39,6 +39,16 @@ Or install it yourself as:
 
 `MetaWeblog::Client#post` returns `post_id` of new entry if the entry is posted successfully. 
 
+
+### Get an existing entry
+
+Just calling `get` method with post_id:
+
+```ruby
+  post = client.get(post_id)
+```
+
+
 ### Edit an existing entry
 
 ```ruby
