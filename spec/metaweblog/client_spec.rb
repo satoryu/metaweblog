@@ -23,4 +23,13 @@ describe MetaWeblog::Client do
       expect { @client.post(expected_post) }.not_to raise_error
     end
   end
+  describe "#get" do
+    let(:post_id) { 12345 }
+    before do
+      @xml_client.should_receive(:call).with('metaWeblog.getPost', post_id, 'username', 'password')
+    end
+    it do 
+      expect { @client.get(post_id) }.not_to raise_error
+    end
+  end
 end

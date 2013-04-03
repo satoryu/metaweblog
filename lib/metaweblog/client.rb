@@ -18,6 +18,10 @@ module MetaWeblog
       @client = XMLRPC::Client.new2(@uri, @proxy)
     end
 
+    def get(post_id)
+      client.call('metaWeblog.getPost', post_id, username, password)
+    end
+
     def post(post, publish=true)
       client.call('metaWeblog.newPost', blog_id, username, password, post, publish)
     end
