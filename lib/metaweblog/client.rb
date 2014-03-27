@@ -1,11 +1,9 @@
 # encoding: utf-8
 
+require 'metaweblog/post'
 require 'xmlrpc/client'
 
 module MetaWeblog
-  POST_MEMBERS = [:title, :link, :description]
-  Post = Struct.new(*POST_MEMBERS)
-
   class Client
     attr_reader :uri, :proxy, :blog_id, :username, :password, :client
 
