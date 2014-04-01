@@ -10,5 +10,5 @@ deploy:
   on:
     repo: satoryu/metaweblog
     tags: false
-    branche:
+    branch:
     - development
