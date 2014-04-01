@@ -22,7 +22,7 @@ describe MetaWeblog::Post do
       end
 
       specify 'should assign values for members' do
-        MetaWeblog::POST_MEMBERS.each do |member|
+        MetaWeblog::Post.members.each do |member|
           expect(post[member]).to eq(args[0][member])
         end
       end

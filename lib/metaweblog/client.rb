@@ -21,11 +21,11 @@ module MetaWeblog
     end
 
     def post(post, publish=true)
-      client.call('metaWeblog.newPost', blog_id, username, password, post, publish)
+      client.call('metaWeblog.newPost', blog_id, username, password, post.to_h, publish)
     end
 
     def edit(post_id, post, publish=true)
-      client.call('metaWeblog.editPost', post_id, username, password, post, publish)
+      client.call('metaWeblog.editPost', post_id, username, password, post.to_h, publish)
     end
 
     def recent_posts(n=10)

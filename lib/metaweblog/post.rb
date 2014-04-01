@@ -1,17 +1,38 @@
 # encoding: utf-8
 
 module MetaWeblog
-  POST_MEMBERS = [:title, :link, :description]
 
-  Post = Struct.new(*POST_MEMBERS) do
+  class Post
+    def self.members
+      [:title, :link, :description]
+    end
+
     def initialize(*args)
+      @data = {}
+
       if args.length == 1 && args.last.is_a?(Hash)
         h = args.last
-        self.members.each do |member|
-          self[member] = h[member]
+        self.class.members.each do |member|
+          @data[member] = h[member] if h[member]
         end
       else
-        super
+        self.class.members.each_with_index do |member, i|
+          @data[member] = args[i]
+        end
+      end
+    end
+
+    def [](m)
+      @data[m]
+    end
+
+    def to_h
+      @data.dup
+    end
+
+    members.each do |member|
+      define_method member do
+        @data[member]
       end
     end
   end
