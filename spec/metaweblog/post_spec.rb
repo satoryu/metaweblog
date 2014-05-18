@@ -18,13 +18,13 @@ describe MetaWeblog::Post do
 
     context 'Given only a hash' do
       let(:args) do
-        [{ :title => 'Hello', :description => 'This is blog', :extra => 'not defined' }]
+        [{ :title => 'Hello', 'description' => 'This is blog', :extra => 'not defined' }]
       end
 
       specify 'should assign values for members' do
-        MetaWeblog::Post.members.each do |member|
-          expect(post[member]).to eq(args[0][member])
-        end
+        expect(post[:title]).to eq(args[0][:title])
+        expect(post[:description]).to eq(args[0]['description'])
+        expect(post[:link]).to be_nil
       end
     end
   end

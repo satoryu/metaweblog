@@ -13,7 +13,7 @@ module MetaWeblog
       if args.length == 1 && args.last.is_a?(Hash)
         h = args.last
         self.class.members.each do |member|
-          @data[member] = h[member] if h[member]
+          @data[member] = h[member] || h[member.to_s]
         end
       else
         self.class.members.each_with_index do |member, i|
