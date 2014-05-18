@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe MetaWeblog::Post do
-  describe '#initialize' do
-    let(:post) { MetaWeblog::Post.new(*args) }
+  let(:post) { MetaWeblog::Post.new(*args) }
 
+  describe '#initialize' do
     context 'Given an array of values' do
       let(:args) do
         [ 'title', 'http://blog.example.com/1234', 'desc' ]
@@ -30,5 +30,14 @@ describe MetaWeblog::Post do
   end
 
   describe '#pubDate' do
+    let(:args) { ['title', nil, nil, pubDate ] }
+
+    context 'Given as String' do
+      let(:pubDate) { 'Wed, 29 Jul 1981 21:16:00 +0900' }
+
+      specify 'should be Time object' do
+        expect(post.pubDate).to be_a(Time)
+      end
+    end
   end
 end

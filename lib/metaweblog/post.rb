@@ -4,7 +4,7 @@ module MetaWeblog
 
   class Post
     def self.members
-      [:title, :link, :description]
+      [:title, :link, :description, :pubDate]
     end
 
     def initialize(*args)
@@ -12,13 +12,12 @@ module MetaWeblog
 
       if args.length == 1 && args.last.is_a?(Hash)
         h = args.last
-        self.class.members.each do |member|
-          @data[member] = h[member] || h[member.to_s]
-        end
+        data = self.class.members.map { |m| (h[m] || h[m.to_s]) }
       else
-        self.class.members.each_with_index do |member, i|
-          @data[member] = args[i]
-        end
+        data = args
+      end
+      self.class.members.each_with_index do |member, i|
+        self.__send__ "#{member}=", data[i] if data[i]
       end
     end
 
@@ -34,6 +33,16 @@ module MetaWeblog
       define_method member do
         @data[member]
       end
+
+      define_method "#{member}=" do |val|
+        @data[member] = val
+      end
     end
+
+    def pub_date=(pub_date)
+      @data[:pubDate] = Time.parse(pub_date)
+    end
+    alias :pubDate= :pub_date=
+
   end
 end
