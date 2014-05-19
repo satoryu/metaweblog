@@ -40,7 +40,12 @@ module MetaWeblog
     end
 
     def pub_date=(pub_date)
-      @data[:pubDate] = Time.parse(pub_date)
+      @data[:pubDate] = case pub_date
+        when String then Time.parse(pub_date)
+        when Time, DateTime then pub_date
+        else
+          raise ArgumentError, "The argument is not String, Time and DateTime."
+        end
     end
     alias :pubDate= :pub_date=
 

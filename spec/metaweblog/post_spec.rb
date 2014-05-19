@@ -39,5 +39,13 @@ describe MetaWeblog::Post do
         expect(post.pubDate).to be_a(Time)
       end
     end
+
+    context 'Given as Time object' do
+      let(:pubDate) { Time.now }
+
+      specify 'should be Time object' do
+        expect(post.pubDate).to eq(pubDate)
+      end
+    end
   end
 end
