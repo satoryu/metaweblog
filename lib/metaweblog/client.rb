@@ -14,6 +14,7 @@ module MetaWeblog
       @username = username
       @password = password
       @client = XMLRPC::Client.new2(@uri, @proxy)
+      @client.http_header_extra = { 'Accept-Encoding' => 'identity' }
     end
 
     def get(post_id)
