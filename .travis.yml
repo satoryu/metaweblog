@@ -2,13 +2,4 @@ language: ruby
 rvm:
 - 1.9.3
 - 2.0.0
-- 2.1
-deploy:
-  provider: rubygems
-  api_key:
-    secure: V/Bbkigo7wgUvF6qJf7JF1C34kZnm+gzfmNoNibMsXa65FpUFYIwkG4stDDGbsHqKtKfJ4p2uP+Ef5wr+VLyScTn25aPizbU6g4Kze5MwrLF+RxQNe+ONPvoutoSe9xHrwNWitIoEB7vSg4vBjYL/qpeJmkCfdJE9cbzMUOxDJc=
-  on:
-    repo: satoryu/metaweblog
-    tags: false
-    branch:
-    - development
+- 2.1.2
