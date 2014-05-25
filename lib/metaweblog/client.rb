@@ -1,11 +1,9 @@
 # encoding: utf-8
 
+require 'metaweblog/post'
 require 'xmlrpc/client'
 
 module MetaWeblog
-  POST_MEMBERS = [:title, :link, :description]
-  Post = Struct.new(*POST_MEMBERS)
-
   class Client
     attr_reader :uri, :proxy, :blog_id, :username, :password, :client
 
@@ -16,6 +14,7 @@ module MetaWeblog
       @username = username
       @password = password
       @client = XMLRPC::Client.new2(@uri, @proxy)
+      @client.http_header_extra = { 'Accept-Encoding' => 'identity' }
     end
 
     def get(post_id)
@@ -23,11 +22,11 @@ module MetaWeblog
     end
 
     def post(post, publish=true)
-      client.call('metaWeblog.newPost', blog_id, username, password, post, publish)
+      client.call('metaWeblog.newPost', blog_id, username, password, post.to_h, publish)
     end
 
     def edit(post_id, post, publish=true)
-      client.call('metaWeblog.editPost', post_id, username, password, post, publish)
+      client.call('metaWeblog.editPost', post_id, username, password, post.to_h, publish)
     end
 
     def recent_posts(n=10)
