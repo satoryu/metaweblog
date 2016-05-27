@@ -1,4 +1,3 @@
-# coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'metaweblog/version'
@@ -6,7 +5,6 @@ require 'metaweblog/version'
 Gem::Specification.new do |spec|
   spec.name          = "metaweblog"
   spec.version       = MetaWeblog::VERSION
-  spec.version       = "#{spec.version}.pre#{ENV['TRAVIS_BUILD_NUMBER']}" if ENV['TRAVIS']
   spec.authors       = ["Tatsuya Sato"]
   spec.email         = ["satoryu.1981@gmail.com"]
   spec.description   = <<-DESC

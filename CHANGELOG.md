@@ -1,3 +1,7 @@
+# 0.3.0 (2016-05-27)
+
+* Update the supported ruby version, 2.1.0 or later
+
 # 0.2.0 (2014-05-25)
 
 * Refactor `MetaWeblog::Post`
