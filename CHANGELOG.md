@@ -1,4 +1,4 @@
-# 0.3.0 (2016-05-27)
+# 0.3.0 (2016-08-26)
 
 * Update the supported ruby version, 2.1.0 or later
 
