@@ -6,3 +6,5 @@ gemspec
 if RUBY_VERSION >= '2.4.0'
   gem 'xmlrpc'
 end
+
+gem 'coveralls', require: false
