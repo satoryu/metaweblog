@@ -1,5 +1,9 @@
 # metaweblog - Ruby client for metaWeblog API
 
+[![Gem Version](https://badge.fury.io/rb/metaweblog.svg)](https://badge.fury.io/rb/metaweblog)
+[![Build Status](https://travis-ci.org/satoryu/metaweblog.svg?branch=master)](https://travis-ci.org/satoryu/metaweblog)
+[![Coverage Status](https://coveralls.io/repos/github/satoryu/metaweblog/badge.svg?branch=measure_code_coverage)](https://coveralls.io/github/satoryu/metaweblog?branch=measure_code_coverage)
+
 This gem makes it easier for you to talk with your blog apps via metaWeblog API.
 
 ## Installation
