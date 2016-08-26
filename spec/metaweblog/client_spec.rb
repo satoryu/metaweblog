@@ -17,7 +17,7 @@ describe MetaWeblog::Client do
     let(:post) { MetaWeblog::Post.new(expected_post) }
 
     before do
-      @xml_client.should_receive(:call).with('metaWeblog.newPost',
+      expect(@xml_client).to receive(:call).with('metaWeblog.newPost',
                                              'blog_id',
                                              'username', 'password',
                                              expected_post, true)
@@ -32,7 +32,7 @@ describe MetaWeblog::Client do
     let(:post_id) { 12345 }
 
     before do
-      @xml_client.should_receive(:call).with('metaWeblog.getPost', post_id, 'username', 'password')
+      expect(@xml_client).to receive(:call).with('metaWeblog.getPost', post_id, 'username', 'password')
     end
 
     it do 
