@@ -17,6 +17,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://github.com/satoryu/metaweblog"
   spec.license       = "MIT"
   spec.required_ruby_version = '>= 2.1.0'
+  spec.rdoc_options = %w[
+    --main=README.md
+    --exclude=Gemfile --exclude=Rakefile --exclude=*.gemspec
+  ]
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
