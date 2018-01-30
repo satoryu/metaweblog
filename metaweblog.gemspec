@@ -1,4 +1,4 @@
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path(File.join(__dir__, '../lib'))
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'metaweblog/version'
 
@@ -10,13 +10,13 @@ Gem::Specification.new do |spec|
   spec.description   = <<-DESC
     Ruby client for metaWeblog API.
     This gem makes it easier for developers to talk with your Blog supporting
-    metaWeblog API. 
-    This gem only depends on REXML provided as one of Ruby's standard lib. 
+    metaWeblog API.
+    This gem only depends on REXML provided as one of Ruby's standard lib.
   DESC
   spec.summary       = %q{Ruby client for metaWeblog API.}
   spec.homepage      = "http://github.com/satoryu/metaweblog"
   spec.license       = "MIT"
-  spec.required_ruby_version = '>= 2.1.0'
+  spec.required_ruby_version = '>= 2.2.0'
   spec.rdoc_options = %w[
     --main=README.md
     --exclude=Gemfile --exclude=Rakefile --exclude=*.gemspec
