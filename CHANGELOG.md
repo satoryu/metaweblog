@@ -1,3 +1,7 @@
+# 0.4.0 (2018-01-30)
+
+* Update the supported ruby version, 2.2.0 or later.
+
 # 0.3.0 (2016-08-26)
 
 * Update the supported ruby version, 2.1.0 or later
