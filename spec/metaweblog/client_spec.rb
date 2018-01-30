@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require 'spec_helper'
 
 describe MetaWeblog::Client do
@@ -28,14 +26,14 @@ describe MetaWeblog::Client do
     end
   end
 
-  describe "#get" do
+  describe '#get' do
     let(:post_id) { 12345 }
 
     before do
       expect(@xml_client).to receive(:call).with('metaWeblog.getPost', post_id, 'username', 'password')
     end
 
-    it do 
+    it do
       expect { @client.get(post_id) }.not_to raise_error
     end
   end

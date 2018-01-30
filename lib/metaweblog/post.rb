@@ -1,10 +1,9 @@
-# encoding: utf-8
 
 module MetaWeblog
 
   class Post
     def self.members
-      [:title, :link, :description, :pubDate]
+      %i[title link description pubDate]
     end
 
     def initialize(*args)
@@ -17,7 +16,7 @@ module MetaWeblog
         data = args
       end
       self.class.members.each_with_index do |member, i|
-        self.__send__ "#{member}=", data[i] if data[i]
+        __send__ "#{member}=", data[i] if data[i]
       end
     end
 
@@ -40,14 +39,14 @@ module MetaWeblog
     end
 
     def pub_date=(pub_date)
-      @data[:pubDate] = case pub_date
+      @data[:pubDate] =
+        case pub_date
         when String then Time.parse(pub_date)
         when Time, DateTime then pub_date
         else
-          raise ArgumentError, "The argument is not String, Time and DateTime."
+          raise ArgumentError, 'The argument is not String, Time and DateTime.'
         end
     end
-    alias :pubDate= :pub_date=
-
+    alias pubDate= pub_date=
   end
 end

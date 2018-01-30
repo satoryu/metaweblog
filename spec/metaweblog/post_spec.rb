@@ -6,7 +6,7 @@ describe MetaWeblog::Post do
   describe '#initialize' do
     context 'Given an array of values' do
       let(:args) do
-        [ 'title', 'http://blog.example.com/1234', 'desc' ]
+        ['title', 'http://blog.example.com/1234', 'desc']
       end
 
       specify '' do
@@ -18,7 +18,7 @@ describe MetaWeblog::Post do
 
     context 'Given only a hash' do
       let(:args) do
-        [{ :title => 'Hello', 'description' => 'This is blog', :extra => 'not defined' }]
+        [{title: 'Hello', 'description' => 'This is blog', extra: 'not defined' }]
       end
 
       specify 'should assign values for members' do
