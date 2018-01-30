@@ -1,3 +1,4 @@
+require 'time'
 
 module MetaWeblog
 
