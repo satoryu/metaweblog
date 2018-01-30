@@ -1,4 +1,4 @@
-lib = File.expand_path(File.join(__dir__, '../lib'))
+lib = File.expand_path(File.join(__dir__, 'lib'))
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'metaweblog/version'
 
