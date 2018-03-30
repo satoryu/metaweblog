@@ -16,11 +16,17 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Ruby client for metaWeblog API.'
   spec.homepage      = 'http://github.com/satoryu/metaweblog'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.2.0'
+  spec.required_ruby_version = '>= 2.3.0'
   spec.rdoc_options = %w[
     --main=README.md
     --exclude=Gemfile --exclude=Rakefile --exclude=*.gemspec
   ]
+  spec.metadata = {
+    "homepage_uri" => "https://github.com/satoryu/metaweblog",
+    "changelog_uri" => "https://github.com/satoryu/metaweblog/blob/master/CHANGELOG.md",
+    "source_code_uri" => "https://github.com/satoryu/metaweblog",
+    "bug_tracker_uri" => "https://github.com/satoryu/metaweblog/issues"
+  }
 
   spec.files         = `git ls-files`.split($RS)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
