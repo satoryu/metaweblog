@@ -1,3 +1,7 @@
+# 0.4.1 (2018-03-31)
+
+* Drop ruby 2.2.0 from supported ruby versions.
+
 # 0.4.0 (2018-01-30)
 
 * Update the supported ruby version, 2.2.0 or later.
